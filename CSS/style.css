@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
@@ -236,6 +239,19 @@ body {
     padding: 20px 0;
   }
 }
-html {
-  scroll-behavior: smooth;
+
+.contact-section {    /* kontaktseksjon nederst */
+  background-color: #111111;  /* bakgrunnsfarge */
+  color: #f1f1f1;          /* lesbar tekst */
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;        /* plass over det */
+  font-size: 18px;
+  width: 100%;             /* full bredde */
+}
+
+
+.contact-section span {
+  font-weight: bold;
+  color: #4CAF50;  /* aksentfarge (eksempel: grønn) */
 }
