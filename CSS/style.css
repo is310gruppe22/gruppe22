@@ -256,6 +256,14 @@ body.fade-out {
   margin-top: 40px;        /* plass over det */
   font-size: 18px;
   width: 100%;             /* full bredde */
+  
+}
+
+.uia-logo {
+  position: absolute;
+  left: 20px;
+  height: 40px;  /* mynke logohøyde */
+  width: auto;   /* beholde proporsjoner */
 }
 
 
