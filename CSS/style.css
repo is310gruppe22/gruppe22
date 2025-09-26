@@ -119,10 +119,107 @@ body.fade-out {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* mørkere bakgrunn på knapp ved hover */
-.hero-btn:hover {
-  background: #333;
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 60px 40px 60px 6vw;
+    gap: 36px; /* More space between elements */
 }
+
+.hero-intro-area {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 14px;
+    max-width: 500px;
+}
+
+.hero-intro {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+}
+
+.hero-btn {
+    margin-top: 16px;
+    font-size: 1.12rem;
+    padding: 14px 36px;
+    border-radius: 28px;
+    font-weight: 700;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.hero-btn:hover { background: #333; }
+
+.hero-expand-btn, .hero-close-btn {
+    background: #fff;
+    color: #111;
+    border: 2px solid #111;
+    padding: 10px 28px;
+    border-radius: 22px;
+    font-size: 1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.hero-expand-btn:hover, .hero-close-btn:hover {
+    background: #111;
+    color: #fff;
+    border-color: #333;
+}
+
+/* --- Modal for expanded text --- */
+.hero-modal {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.18); /* subtle overlay */
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;  
+}
+
+.hero-modal.active {
+    display: flex;
+    animation: fadeInHeroModal 0.3s;
+}
+
+@keyframes fadeInHeroModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-text-full {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    padding: 36px 32px 18px 32px;
+    max-width: 580px;
+    width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: fadeInHeroText 0.4s;
+}
+@keyframes fadeInHeroText {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+
 
 /* høyre side av hero: bilde */
 .hero-right {
@@ -137,6 +234,18 @@ body.fade-out {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.hero-text-full p {
+  font-size: 1.05rem;   /* litt mindre enn hero-left intro */
+  line-height: 1.65;    /* mer pusterom */
+  color: #444;          /* mykere enn ren svart */
+  margin: 0 0 14px 0;   /* mellomrom mellom avsnitt */
+}
+
+.hero-text-full p:first-of-type {
+  font-weight: 500; /* subtil vektlegging */
+  color: #333;
 }
 
 /* profiles: seksjon med alle profiler */
