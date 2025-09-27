@@ -181,12 +181,13 @@ body.fade-out {
 .hero-modal {
     display: none;
     position: fixed;
-    z-index: 50;
+    z-index: 50; /* over navbar */
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.18); /* subtle overlay */
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* start from top */
     overflow-y: auto;  
+    padding-top: 150px;
 }
 
 .hero-modal.active {
@@ -366,6 +367,7 @@ body.fade-out {
   font-size: 18px;
   width: 100%;             /* full bredde */
   
+  
 }
 
 .uia-logo {
@@ -413,4 +415,79 @@ body.fade-out {
   height: 100%;
   border: none;
   border-radius: 12px; /* avrundede hjørner */
+}
+
+/* projects: seksjon med prosjekter */
+.projects {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+}
+/* overskrift for prosjektsiden */
+.projects h1 {
+  font-size: 2.4rem; /* litt mindre enn profilsiden */
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+/* liste over prosjekter */
+.project-list {
+  display: flex;
+  flex-direction: column; /* stable vertikalt */
+  gap: 40px;
+}
+
+/* prosjektkort: utseende for hvert prosjekt */
+.project-card {
+  background: #fff;
+  border-radius: 16px; /* avrundede hjørner */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* litt sterkere skygge */
+  padding: 28px 22px;
+  text-align: center;
+}
+
+/* prosjekt tittel */
+.project-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px; /* litt mindre mellomrom */
+}
+
+/* prosjekt beskrivelse */
+.project-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+/* bilder for hvert prosjekt */
+.project-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* sentrerer bilder */
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* stil for hvert bilde */
+.project-images img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* knapp for å se mer om prosjektet */
+.project-btn {
+  display: inline-block;  /* gjør knappen til en blokk */
+  background: #111;
+  color: #fff;
+  padding: 12px 28px; /* litt mindre padding */
+  border-radius: 24px; /* litt mer avrundet */
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s; /* myk overgang */
+}
+
+.project-btn:hover {
+  background: #333;
 }
